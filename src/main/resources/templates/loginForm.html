@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+</head>
+<body>
+<h1>로그인 페이지</h1>
+<hr/>
+
+<form action="/login" method="POST">
+ <!--   <input type="text" th:field="*{username}"><br/>
+    <input type="password" th:field="*{password}"><br/>-->
+        <div th:if="${param.error}">
+            <p class="error-message" th:text="${errorMessage}">User Name or Password</p>
+        </div>
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+    <button>로그인</button>
+</form>
+<a href="/oauth2/authorization/google">구글 로그인</a><!--OAUTH2.0 라이브러리를쓰면 고정 주소임-->
+<a href="/oauth2/authorization/facebook">페이스북 로그인</a><!--OAUTH2.0 라이브러리를쓰면 고정 주소임-->
+<<<<<<< Updated upstream
+<a href="/oauth2/authorization/naver">네이버 로그인</a><!--OAUTH2.0 라이브러리를쓰면 고정 주소임, 클릭하면 결국  authorization-uri: https://nid.naver.com/oauth2.0/authorize 이게 호출-->
+=======
+>>>>>>> Stashed changes
+<a href="/joinForm">회원가입을 아직 하지 않으셨나요?</a>
+
+</body>
+</html>
