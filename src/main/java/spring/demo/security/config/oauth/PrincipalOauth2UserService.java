@@ -62,7 +62,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 
 
         log.info("googleInfo={}", oAuth2User.getAttributes());
-        OAuth2UserInfo oAuth2UserInfo = null;
+        OAuth2UserInfo oAuth2UserInfo = null; //각각의 프로필이 제공하는 key value가 다를수있어서 인터페이스를 이용해서 통합
         if(userRequest.getClientRegistration().getRegistrationId().equals("google")){
             log.info("구글 로그인 요청");
             oAuth2UserInfo = new GoogleUserInfo(oAuth2User.getAttributes());
