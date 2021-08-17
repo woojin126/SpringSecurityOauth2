@@ -24,7 +24,7 @@ import java.util.Map;
 //https://velog.io/@sa833591/Spring-Security-2 시큐리티
 //userDetails 부분 https://programmer93.tistory.com/68
 @Data
-public class PrincipalDetails implements UserDetails, OAuth2User {//Spring Security에서 사용자의 정보를 담는 인터페이스이다.
+public class PrincipalDetails implements UserDetails, OAuth2User {//DB에서 유저정보를 가져와 사용자의 정보를 담는 인터페이스이다.
                                          //일반로그인정보 , Oauth2로 로그인한정보
     private User user;//컴포지션 유저정보
     private Map<String,Object> attributes;//auth정보담을곳
