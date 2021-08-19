@@ -21,8 +21,15 @@ import java.util.Map;
  * 정리: Security Session 안에들어갈수있는 인증정보 => Authentication 객체여야만함함 =>
  * 이안에 필요한정보는 UserDetails(PrincipalDetails를 이제 Authentication 객체안에 넣을수 있다.) 이어야만함
  * */
-//https://velog.io/@sa833591/Spring-Security-2 시큐리티
-//userDetails 부분 https://programmer93.tistory.com/68
+
+/**
+ * Spring Security에서 사용자의 정보를 담는 인터페이스는 UserDetails 인터페이스이다.
+ * 우리가 이 인터페이스를 구현하게 되면 Spring Security에서 구현한 클래스를 사용자 정보로 인식하고 인증 작업을 한다.
+ * 쉽게 말하면 UserDetails 인터페이스는 VO 역할을 한다고 보면 된다. 그래서 우리는 사용자의 정보를 모두 담아두는 클래스를 구현할 것이다.
+ * UserDetails 인터페이스를 구현하게 되면 오버라이드되는 메소드들이 있다. 이 메소드들에 대해 파악을 해야 된다.
+ * 그리고 회원 정보에 관한 다른 정보(이름, 나이, 생년월일, ...)도 추가해도 된다. 오버라이드되는 메소드들만 Spring Security에서 알아서 이용하기 때문에
+ * 따로 클래스를 만들지 않고 멤버변수를 추가해서 같이 사용해도 무방하다. 만든 멤버변 수들은 getter, setter를 만들어서 사용하면 된다.
+ */
 @Data
 public class PrincipalDetails implements UserDetails, OAuth2User {//DB에서 유저정보를 가져와 사용자의 정보를 담는 인터페이스이다.
                                          //일반로그인정보 , Oauth2로 로그인한정보
