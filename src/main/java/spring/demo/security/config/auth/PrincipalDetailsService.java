@@ -11,6 +11,12 @@ import spring.demo.security.repository.UserRepository;
 
 import java.util.Optional;
 
+/**
+ UserDetailsService 인터페이스는 DB에서 유저 정보를 가져오는 역할을 한다. 해당 인터페이스의 메소드에서 DB의 유저 정보를 가져와서 AuthenticationProvider
+ 인터페이스로 유저 정보를 리턴하면, 그 곳에서 사용자가 입력한 정보와 DB에 있는 유저 정보를 비교한다. 지금 우리가 할 것은 유저 정보를 가져오는 인터페이스를 구현하는 것이다.
+ 사용자가 입력한 정보와 비교하는 작업은 이 글에서는 없다. DB에서 유저 정보를 가져오는 작업만 하기 때문에,
+ 여기에서 필요한 인터페이스는 UserDetails 인터페이스와 UserDetailsService 인터페이스이다. 그럼 시작한다!
+ */
 // 시큐리티 설정에서 loginProcessingUrl("/login")
 // login 요청이 오면 자동으로 UserDetailsService 타입으로 IoC 되어있는 loadUserByUsername 함수가 실행
 @Service //메모리에 띄우겠다.
